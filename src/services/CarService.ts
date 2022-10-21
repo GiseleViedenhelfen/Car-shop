@@ -17,6 +17,7 @@ class CarService implements IService<ICar> {
     }
     return this._car.create(parsed.data);
   }
+  
   public async readOne(_id:string):Promise<ICar> {
     const lerId = await this._car.readOne(_id);
     if (!lerId) throw new Error(ErrorTypes.EntityNotFound);
